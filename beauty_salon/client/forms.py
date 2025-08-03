@@ -10,5 +10,5 @@ class ClientForm(forms.ModelForm):
         # Link the form to the Client model.
         model = Client
         
-        # Define user-editable fields. 'id' is excluded.
+        # Define user-editable fields.
         fields = ['client_name', 'client_email', 'client_number']

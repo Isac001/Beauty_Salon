@@ -1,10 +1,14 @@
-# beauty_salon/urls.py
-
+# Django and project imports.
 from django.contrib import admin
-from django.urls import path, include # Adicione 'include'
+from django.urls import path, include 
 
+# URL patterns
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('client.urls')),
 
+    # Django URLs.
+    path('admin/', admin.site.urls),
+
+    # App's URLs.
+    path('client/', include('client.urls')),
+    path('salon_service/', include('salon_service.urls'))
 ]
