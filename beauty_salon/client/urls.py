@@ -1,13 +1,11 @@
-# Django imports.
+# Django and project imports
 from django.urls import path
-
-# Local application imports.
 from .views import *
 
-# URL patterns for the client app.
+# URL patterns for the client app
 urlpatterns = [
-    path('clients/', ClientListView.as_view(), name='client-list'),
+    path('', ClientListView.as_view(), name='client-list'),
     path('create/', ClientCreateView.as_view(), name='client-create'),
-    path('update/<int:pk>/', ClientUpdateView.as_view(), name='client-update'),
-    path('delete/<int:pk>/', ClientDeleteView.as_view(), name='client-delete'),
+    path('<int:pk>/update/', ClientUpdateView.as_view(), name='client-update'),
+    path('<int:pk>/delete/', ClientDeleteView.as_view(), name='client-delete'),
 ]

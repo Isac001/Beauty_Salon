@@ -1,19 +1,23 @@
-# beauty_salon/settings.py
-
+# Django, python and project imports
 from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
+# Secret key.
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
+# Debug configuration.
 DEBUG = True
-ALLOWED_HOSTS = ['*'] # Lembre-se de restringir em produção!
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
+
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -23,11 +27,12 @@ INSTALLED_APPS = [
 
     # Local apps
     'client',
+    'salon_service'
    
 ]
 
+# Middleware definition
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware', # REMOVIDO
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -37,8 +42,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Root URL configuration.
 ROOT_URLCONF = 'beauty_salon.urls'
 
+# Template configuration.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -55,12 +62,11 @@ TEMPLATES = [
     },
 ]
 
+# WSGI configuration.
 WSGI_APPLICATION = 'beauty_salon.wsgi.application'
 
-# REMOVIDO: Bloco de configuração do Django Rest Framework
-# REST_FRAMEWORK = { ... }
 
-# A configuração do banco de dados está perfeita, mantenha como está
+# Database configuration.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -72,6 +78,7 @@ DATABASES = {
     }
 }
 
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
@@ -79,11 +86,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
-# Configurações de idioma e fuso horário estão ótimas
+# Language and time settings.
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Fortaleza'
 USE_I18N = True
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images).
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
