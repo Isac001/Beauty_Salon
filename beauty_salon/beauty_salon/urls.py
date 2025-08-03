@@ -10,5 +10,8 @@ urlpatterns = [
 
     # App's URLs.
     path('client/', include('client.urls')),
-    path('salon_service/', include('salon_service.urls'))
+    path('salon_service/', include('salon_service.urls')),
+
+    # Login URLs.
+    path('', include('login.urls'))
 ]

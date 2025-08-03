@@ -27,7 +27,8 @@ INSTALLED_APPS = [
 
     # Local apps
     'client',
-    'salon_service'
+    'salon_service',
+    'login',
    
 ]
 

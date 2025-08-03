@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Beauty Salon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
+    
+</head>
+<body>
+    <div class="login-layout">
+        <div class="login-image-side">
+        </div>
+
+        <div class="form-side">
+            <div class="form-container">
+                <h1>Faça Login</h1>
+
+                {% if messages %}
+                <div class="form-errors">
+                    <p>Ocorreram os seguintes erros:</p>
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% elif form.errors %}
+                <div class="form-errors">
+                    <p>Ocorreram os seguintes erros:</p>
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                        <li>{{ field|title }}: {{ error }}</li>
+                        {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="{{ form.username.id_for_label }}">E-mail do Usuário</label>
+                        {{ form.useremail }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.password.id_for_label }}">Senha</label>
+                        {{ form.password }}
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="id_remember_me" name="remember_me">
+                            <label for="id_remember_me">Permanecer conectado</label>
+                        </div>
+                        <a href="#" class="forgot-password-link">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="submit-button">Entrar</button>
+
+                    <div class="register-link-container">
+                        <span>Não tem uma conta?</span>
+                        <a href="#" class="register-link">Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
