@@ -2,6 +2,8 @@
 from django.contrib import admin
 from django.urls import path, include 
 
+app_name = 'client'
+
 # URL patterns
 urlpatterns = [
 
@@ -9,9 +11,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # App's URLs.
-    path('client/', include('client.urls')),
-    path('salon_service/', include('salon_service.urls')),
+    path('client/', include('apps.client.urls',)),
+    path('salon_service/', include('apps.salon_service.urls')),
+    path('employee/', include('apps.employee.urls')),
+    path('scheduling/', include('apps.scheduling.urls')),
 
     # Login URLs.
-    path('', include('login.urls'))
+    # path('', include('login.urls'))
+    path('', include('home.urls')),
+    
 ]

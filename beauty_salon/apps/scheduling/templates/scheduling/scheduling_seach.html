@@ -1,0 +1,108 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Agendamentos Concluídos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'scheduling/css/scheduling.css' %}">
+
+</head>
+<body class="page-list">
+    <a href="{% url 'home:home' %}" class="back-button">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <div class="container list-container">
+        <div class="table-header">
+            <h1>Relatório de Agendamentos Concluídos</h1>
+            <a href="{% url 'scheduling:scheduling-create' %}" class="add-button">Adicionar Novo Agendamento</a>
+        </div>
+        
+        <form method="get" class="search-form" action="{% url 'scheduling:list-completed-only' %}">
+            <label for="date-filter">Filtrar por Data:</label>
+            <input type="date" id="date-filter" name="date" value="{{ request.GET.date }}">
+            <button type="submit" class="action-button-table search-button">Buscar</button>
+            <a href="{% url 'scheduling:list-completed-only' %}" class="action-button-table clear-button">Limpar</a>
+        </form>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Profissional</th>
+                        <th>Serviço</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for scheduling in page_obj %}
+                        <tr>
+                            <td>{{ scheduling.client.client_name }}</td>
+                            <td>{{ scheduling.professional.employee_name }}</td>
+                            <td>{{ scheduling.salon_service.name_of_service }}</td>
+                            <td>{{ scheduling.date }}</td>
+                            <td>{{ scheduling.time }}</td>
+                            <td>{{ scheduling.status }}</td>
+                            <td>
+                                <div class="actions-cell">
+                                    <a href="{% url 'scheduling:scheduling-update' pk=scheduling.pk %}" class="action-button-table edit-button-table">Editar</a>
+                                    <form action="{% url 'scheduling:scheduling-cancel' pk=scheduling.pk %}" method="post"
+                                          onsubmit="return confirm('Tem certeza que quer cancelar este agendamento?');" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="action-button-table delete-button-table">Cancelar</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 40px; font-style: italic; color: #aaa;">
+                                Nenhum agendamento concluído encontrado.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            {% if page_obj.has_other_pages %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'scheduling:list-completed-only' %}?page=1{% if request.GET.date %}&date={{ request.GET.date }}{% endif %}">&laquo; Primeira</a>
+                    <a href="{% url 'scheduling:list-completed-only' %}?page={{ page_obj.previous_page_number }}{% if request.GET.date %}&date={{ request.GET.date }}{% endif %}">Anterior</a>
+                {% else %}
+                    <span class="disabled">&laquo; Primeira</span>
+                    <span class="disabled">Anterior</span>
+                {% endif %}
+
+            <span class="current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+
+                {% if page_obj.has_next %}
+                    <a href="{% url 'scheduling:list-completed-only' %}?page={{ page_obj.next_page_number }}{% if request.GET.date %}&date={{ request.GET.date }}{% endif %}">Próxima</a>
+                    <a href="{% url 'scheduling:list-completed-only' %}?page={{ page_obj.paginator.num_pages }}{% if request.GET.date %}&date={{ request.GET.date }}{% endif %}">Última &raquo;</a>
+                {% else %}
+                    <span class="disabled">Próxima</span>
+                    <span class="disabled">Última &raquo;</span>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body >
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Funcionário</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/imask"></script>
+    
+    <link rel="stylesheet" href="{% static 'employee/employee_style.css' %}">
+
+</head>
+<body>
+    <a href="{% url 'employee:employee-list' %}" class="back-button">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <div class="container form-container">
+        <h1>Editar Funcionário</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error|linebreaksbr }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+    
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="form-errors">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+    
+            <button type="submit" class="submit-button">Salvar Alterações</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // As máscaras para os campos de telefone e CPF serão aplicadas aqui
+            const phoneInput = document.getElementById('id_employee_number');
+            const cpfInput = document.getElementById('id_employee_cpf');
+
+            if (phoneInput) {
+                const phoneMaskOptions = {
+                    mask: '(00) 00000-0000'
+                };
+                IMask(phoneInput, phoneMaskOptions);
+            }
+
+            if (cpfInput) {
+                const cpfMaskOptions = {
+                    mask: '000.000.000-00'
+                };
+                IMask(cpfInput, cpfMaskOptions);
+            }
+        });
+    </script>
+</body>
+</html>

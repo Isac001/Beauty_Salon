@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon - Início</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="main-layout">
+
+        {% include 'home/side_bar.html' %}
+
+        <div class="content-wrapper">
+            <header class="page-header">
+                <div>
+                    <h2>Página de Home</h2>
+                    <p>Visão geral dos agendamentos e acompanhamento de serviços.</p>
+                </div>
+                <a href="{% url 'scheduling:list-completed-only' %}" class="report-button">
+                    <i class="fas fa-chart-bar"></i> Ver Relatórios
+                </a>
+            </header>
+
+            <div class="dashboard-cards-container">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="far fa-calendar-alt"></i>
+                        <h3>Agendamentos</h3>
+                    </div>
+                    <div class="card-content">
+                        {% if page_obj %}
+                        <ul class="scheduling-list">
+                            {% for scheduling in page_obj %}
+                            <li>
+                                <div class="scheduling-item-info">
+                                    <div class="info-group">
+                                        <div class="scheduling-detail">
+                                            <strong>Cliente</strong>
+                                            <span>{{ scheduling.client.client_name }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Status</strong>
+                                            <span>{{ scheduling.get_status_display }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Serviço</strong>
+                                            <span>{{ scheduling.salon_service.name_of_service }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-group">
+                                        <div class="scheduling-detail">
+                                            <strong>Profissional</strong>
+                                            <span>{{ scheduling.professional.employee_name }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Data</strong>
+                                            <span>{{ scheduling.date|date:"d/m/Y" }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Hora</strong>
+                                            <span>{{ scheduling.time }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="actions-group">
+                                    <a href="{% url 'scheduling:scheduling-update' pk=scheduling.pk %}"
+                                        class="action-button-list edit-button">
+                                        Editar
+                                    </a>
+                                    <form action="{% url 'scheduling:scheduling-cancel' pk=scheduling.pk %}"
+                                        method="post"
+                                        onsubmit="return confirm('Tem certeza que quer cancelar este agendamento?');"
+                                        style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="action-button-list cancel-button">Cancelar</button>
+                                    </form>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p>Nenhum agendamento encontrado.</p>
+                        {% endif %}
+
+                        <div class="list-actions">
+                            {% if page_obj.has_other_pages %}
+                            <div class="pagination">
+                                {% if page_obj.has_previous %}
+                                <a href="?page=1">&laquo; Primeira</a>
+                                <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                                {% else %}
+                                <span class="disabled">&laquo; Primeira</span>
+                                <span class="disabled">Anterior</span>
+                                {% endif %}
+                                <span class="current">
+                                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+                                {% else %}
+                                <span class="disabled">Próxima</span>
+                                <span class="disabled">Última &raquo;</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <a href="{% url 'scheduling:scheduling-create' %}" class="add-scheduling-button">
+                                <i class="fas fa-plus"></i> Adicionar Novo Agendamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Acompanhamento de Serviços</h3>
+                    </div>
+                    <div class="card-content">
+                        {% if completed_page_obj %}
+                        <ul class="scheduling-list">
+                            {% for scheduling in completed_page_obj %}
+                            <li>
+                                <div class="scheduling-item-info">
+                                    <div class="info-group">
+                                        <div class="scheduling-detail">
+                                            <strong>Cliente</strong>
+                                            <span>{{ scheduling.client.client_name }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Status</strong>
+                                            <span>{{ scheduling.get_status_display }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Serviço</strong>
+                                            <span>{{ scheduling.salon_service.name_of_service }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-group">
+                                        <div class="scheduling-detail">
+                                            <strong>Profissional</strong>
+                                            <span>{{ scheduling.professional.employee_name }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Data</strong>
+                                            <span>{{ scheduling.date|date:"d/m/Y" }}</span>
+                                        </div>
+                                        <div class="scheduling-detail">
+                                            <strong>Hora</strong>
+                                            <span>{{ scheduling.time }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="actions-group">
+                                    {% if scheduling.status == 'Executando' %}
+                                        <span class="status-label status-executando">{{ scheduling.get_status_display }}</span>
+                                    {% elif scheduling.status == 'Concluído' %}
+                                        <span class="status-label status-concluido">{{ scheduling.get_status_display }}</span>
+                                    {% endif %}
+                                    <a href="{% url 'scheduling:scheduling-update' pk=scheduling.pk %}"
+                                        class="action-button-list edit-button">
+                                        Editar
+                                    </a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p>Nenhum agendamento concluído ou em execução encontrado.</p>
+                        {% endif %}
+
+                        <div class="list-actions">
+                            {% if completed_page_obj.has_other_pages %}
+                            <div class="pagination">
+                                {% if completed_page_obj.has_previous %}
+                                <a href="?completed_page=1">&laquo; Primeira</a>
+                                <a href="?completed_page={{ completed_page_obj.previous_page_number }}">Anterior</a>
+                                {% else %}
+                                <span class="disabled">&laquo; Primeira</span>
+                                <span class="disabled">Anterior</span>
+                                {% endif %}
+                                <span class="current">
+                                    Página {{ completed_page_obj.number }} de {{ completed_page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if completed_page_obj.has_next %}
+                                <a href="?completed_page={{ completed_page_obj.next_page_number }}">Próxima</a>
+                                <a href="?completed_page={{ completed_page_obj.paginator.num_pages }}">Última &raquo;</a>
+                                {% else %}
+                                <span class="disabled">Próxima</span>
+                                <span class="disabled">Última &raquo;</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <a style="visibility: hidden;" href="#" class="add-scheduling-button">
+                                <i class="fas fa-plus"></i> Placeholder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
