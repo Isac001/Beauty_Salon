@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'apps.employee',
     'apps.scheduling',
     'home',
+    'core',  
     
    
 ]

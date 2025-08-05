@@ -1,0 +1,482 @@
+[
+  {
+    "model": "scheduling.scheduling",
+    "pk": 1,
+    "fields": {
+      "client": 1,
+      "professional": 2,
+      "salon_service": 1,
+      "date": "2025-08-05",
+      "time": "09:00:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 2,
+    "fields": {
+      "client": 2,
+      "professional": 3,
+      "salon_service": 5,
+      "date": "2025-08-05",
+      "time": "10:30:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 3,
+    "fields": {
+      "client": 3,
+      "professional": 4,
+      "salon_service": 3,
+      "date": "2025-08-05",
+      "time": "11:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 4,
+    "fields": {
+      "client": 4,
+      "professional": 5,
+      "salon_service": 2,
+      "date": "2025-08-05",
+      "time": "14:00:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 5,
+    "fields": {
+      "client": 5,
+      "professional": 6,
+      "salon_service": 7,
+      "date": "2025-08-06",
+      "time": "15:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 6,
+    "fields": {
+      "client": 6,
+      "professional": 7,
+      "salon_service": 4,
+      "date": "2025-08-06",
+      "time": "16:00:00",
+      "status": "Cancelado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 7,
+    "fields": {
+      "client": 7,
+      "professional": 8,
+      "salon_service": 6,
+      "date": "2025-08-06",
+      "time": "17:30:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 8,
+    "fields": {
+      "client": 8,
+      "professional": 9,
+      "salon_service": 9,
+      "date": "2025-08-07",
+      "time": "09:30:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 9,
+    "fields": {
+      "client": 9,
+      "professional": 10,
+      "salon_service": 10,
+      "date": "2025-08-07",
+      "time": "11:00:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 10,
+    "fields": {
+      "client": 10,
+      "professional": 11,
+      "salon_service": 12,
+      "date": "2025-08-07",
+      "time": "13:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 11,
+    "fields": {
+      "client": 11,
+      "professional": 12,
+      "salon_service": 13,
+      "date": "2025-08-08",
+      "time": "14:30:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 12,
+    "fields": {
+      "client": 12,
+      "professional": 13,
+      "salon_service": 15,
+      "date": "2025-08-08",
+      "time": "16:00:00",
+      "status": "Cancelado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 13,
+    "fields": {
+      "client": 13,
+      "professional": 14,
+      "salon_service": 11,
+      "date": "2025-08-09",
+      "time": "09:00:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 14,
+    "fields": {
+      "client": 14,
+      "professional": 15,
+      "salon_service": 14,
+      "date": "2025-08-09",
+      "time": "10:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 15,
+    "fields": {
+      "client": 15,
+      "professional": 16,
+      "salon_service": 16,
+      "date": "2025-08-09",
+      "time": "11:30:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 16,
+    "fields": {
+      "client": 16,
+      "professional": 17,
+      "salon_service": 17,
+      "date": "2025-08-10",
+      "time": "13:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 17,
+    "fields": {
+      "client": 17,
+      "professional": 18,
+      "salon_service": 18,
+      "date": "2025-08-10",
+      "time": "14:00:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 18,
+    "fields": {
+      "client": 18,
+      "professional": 19,
+      "salon_service": 19,
+      "date": "2025-08-10",
+      "time": "15:30:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 19,
+    "fields": {
+      "client": 19,
+      "professional": 20,
+      "salon_service": 20,
+      "date": "2025-08-11",
+      "time": "10:00:00",
+      "status": "Cancelado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 20,
+    "fields": {
+      "client": 20,
+      "professional": 21,
+      "salon_service": 21,
+      "date": "2025-08-11",
+      "time": "11:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 21,
+    "fields": {
+      "client": 21,
+      "professional": 22,
+      "salon_service": 22,
+      "date": "2025-08-12",
+      "time": "14:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 22,
+    "fields": {
+      "client": 22,
+      "professional": 23,
+      "salon_service": 23,
+      "date": "2025-08-12",
+      "time": "15:30:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 23,
+    "fields": {
+      "client": 23,
+      "professional": 24,
+      "salon_service": 24,
+      "date": "2025-08-13",
+      "time": "09:00:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 24,
+    "fields": {
+      "client": 24,
+      "professional": 25,
+      "salon_service": 25,
+      "date": "2025-08-13",
+      "time": "10:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 25,
+    "fields": {
+      "client": 25,
+      "professional": 26,
+      "salon_service": 26,
+      "date": "2025-08-13",
+      "time": "11:00:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 26,
+    "fields": {
+      "client": 26,
+      "professional": 27,
+      "salon_service": 27,
+      "date": "2025-08-14",
+      "time": "14:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 27,
+    "fields": {
+      "client": 27,
+      "professional": 28,
+      "salon_service": 28,
+      "date": "2025-08-14",
+      "time": "15:30:00",
+      "status": "Cancelado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 28,
+    "fields": {
+      "client": 28,
+      "professional": 29,
+      "salon_service": 29,
+      "date": "2025-08-15",
+      "time": "09:30:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 29,
+    "fields": {
+      "client": 29,
+      "professional": 30,
+      "salon_service": 30,
+      "date": "2025-08-15",
+      "time": "11:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 30,
+    "fields": {
+      "client": 30,
+      "professional": 31,
+      "salon_service": 1,
+      "date": "2025-08-15",
+      "time": "13:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 31,
+    "fields": {
+      "client": 31,
+      "professional": 32,
+      "salon_service": 2,
+      "date": "2025-08-16",
+      "time": "14:30:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 32,
+    "fields": {
+      "client": 32,
+      "professional": 33,
+      "salon_service": 3,
+      "date": "2025-08-16",
+      "time": "16:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 33,
+    "fields": {
+      "client": 33,
+      "professional": 34,
+      "salon_service": 4,
+      "date": "2025-08-17",
+      "time": "09:00:00",
+      "status": "Cancelado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 34,
+    "fields": {
+      "client": 34,
+      "professional": 35,
+      "salon_service": 5,
+      "date": "2025-08-17",
+      "time": "10:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 35,
+    "fields": {
+      "client": 35,
+      "professional": 36,
+      "salon_service": 6,
+      "date": "2025-08-17",
+      "time": "11:30:00",
+      "status": "Concluído"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 36,
+    "fields": {
+      "client": 36,
+      "professional": 37,
+      "salon_service": 7,
+      "date": "2025-08-18",
+      "time": "13:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 37,
+    "fields": {
+      "client": 37,
+      "professional": 38,
+      "salon_service": 8,
+      "date": "2025-08-18",
+      "time": "14:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 38,
+    "fields": {
+      "client": 38,
+      "professional": 39,
+      "salon_service": 9,
+      "date": "2025-08-18",
+      "time": "15:30:00",
+      "status": "Executando"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 39,
+    "fields": {
+      "client": 39,
+      "professional": 40,
+      "salon_service": 10,
+      "date": "2025-08-19",
+      "time": "10:00:00",
+      "status": "Agendado"
+    }
+  },
+  {
+    "model": "scheduling.scheduling",
+    "pk": 40,
+    "fields": {
+      "client": 40,
+      "professional": 1,
+      "salon_service": 11,
+      "date": "2025-08-19",
+      "time": "11:00:00",
+      "status": "Agendado"
+    }
+  }
+]
