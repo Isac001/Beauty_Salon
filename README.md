@@ -1,12 +1,12 @@
 # **Beauty Salon**
 
-### Step 1: Install git:
+# Step 1: Install git:
 
 ```bash
 sudo apt-get install git
 ```
 
-# Step 2: Installation of the Database Solution on PostgreSQL (Required)
+## Step 2: Installation of the Database Solution on PostgreSQL (Required)
 
 _For Ubuntu_ OR _WSL_:
 
