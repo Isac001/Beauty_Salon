@@ -1,13 +1,9 @@
 # Django imports.
-# Import Q for complex queries.
 from django.db.models import Q
-# Import QuerySet for type hinting.
 from django.db.models.query import QuerySet
 
-# Local application imports.
+# Project imports.
 from ..models import Scheduling
-
-# --- Retrieval Functions ---
 
 # Defines a function to get a single scheduling.
 def get_scheduling(*, pk: int) -> Scheduling:

@@ -8,7 +8,7 @@ from ..models import Scheduling
 from . import selectors
 from .exceptions import ValidationError
 
-# Criação de agendamento
+# Scheduling creation
 def scheduling_create(
     *, 
     client_id: int, 
@@ -20,13 +20,13 @@ def scheduling_create(
     
     errors = []
 
-    # Regra: Cliente só pode ter um agendamento ativo
+    # Rule: A client can only have one active scheduling
     if selectors.client_has_active_scheduling(client_id=client_id):
-        errors.append("Este cliente já possui um agendamento ativo (Agendado ou Executando).")
+        errors.append("This client already has an active scheduling (Scheduled or In Progress).")
 
-    # Regra: Não pode agendar para datas passadas
+    # Rule: Cannot schedule for past dates
     if date < timezone.now().date():
-        errors.append("Agendamentos não podem ser criados em datas passadas.")
+        errors.append("Appointments cannot be created on past dates.")
 
     if errors:
         raise ValidationError(errors)
@@ -49,19 +49,14 @@ def scheduling_update(
     data: dict
 ) -> Scheduling:
     
-    errors = [] # Inicializamos a lista de erros
+    # Initialize the error list
+    errors = [] 
 
-    current_status = scheduling.status
-    
-    # Regra: Não permitir alteração em agendamentos já em estado final
-    if current_status in ['Cancelado', 'Concluído']:
-        errors.append('O agendamento está em um estado final e não pode ser alterado.')
-
-    if errors:
-        raise ValidationError(errors)
-        
-    # Atualiza todos os campos válidos, incluindo o status
+    # Update all valid fields, except for client_id
     for field, value in data.items():
+        if field == 'client_id':
+            # This field cannot be changed
+            continue
         setattr(scheduling, field, value)
 
     scheduling.save()
@@ -69,14 +64,14 @@ def scheduling_update(
     return scheduling
 
 
-# Cancelamento de agendamento
+# Scheduling cancellation
 @transaction.atomic
 def scheduling_cancel(*, scheduling: Scheduling) -> Scheduling:
     errors = []
 
-    # Só pode cancelar se estiver 'Agendado' ou 'Executando'
+    # Can only cancel if 'Scheduled' or 'In Progress'
     if scheduling.status not in ['Agendado', 'Executando']:
-        errors.append("Este agendamento já está em um estado final e não pode ser cancelado.")
+        errors.append("This scheduling is already in a final state and cannot be canceled.")
 
     if errors:
         raise ValidationError(errors)

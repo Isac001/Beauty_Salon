@@ -1,5 +1,3 @@
-# Arquivo: scheduling/exceptions.py
-
 # Custom exception for handling multiple validation errors.
 class ValidationError(Exception):
 
