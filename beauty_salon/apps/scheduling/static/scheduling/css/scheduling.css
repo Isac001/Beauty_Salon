@@ -1,0 +1,348 @@
+/* ==========================================================================
+   1. Variables and Global Styles
+   ========================================================================== */
+
+:root {
+    --color-background: #1a1a1a;
+    --color-container: #2c2c2c;
+    --color-text: #e0e0e0;
+    --color-border: #444;
+    --shadow-soft: rgba(0, 0, 0, 0.2);
+    --color-brand-pink: #ff69b4;
+    --color-brand-pink-hover: #ff7ab9;
+    --color-accent-blue: #007bff;
+    --color-accent-red: #dc3545;
+    --color-accent-green: #28a745;
+}
+
+/* ==========================================================================
+   2. Base Body Style
+   ========================================================================== */
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.page-list {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    /* Alteramos o alinhamento para o topo */
+    align-items: flex-start;
+}
+
+.page-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ==========================================================================
+   3. General Layout
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.list-container {
+    margin-top: 50px;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 700px;
+    margin: 50px auto 0 auto;
+}
+
+/* ==========================================================================
+   4. Back Button
+   ========================================================================== */
+
+.back-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--color-container);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-soft);
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+.back-button:hover {
+    background-color: #444;
+}
+
+/* ==========================================================================
+   5. Form Styles
+   ========================================================================== */
+
+.form-container {
+    background-color: var(--color-container);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-soft);
+    width: 500px;
+    max-width: 500px;
+}
+
+.form-container h1 {
+    color: var(--color-brand-pink);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #383838;
+    color: var(--color-text);
+    font-size: 1em;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--color-brand-pink);
+    outline: none;
+}
+
+.form-errors {
+    color: #ff3333;
+    background-color: #442222;
+    border: 1px solid #ff3333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-brand-pink);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--color-brand-pink-hover);
+}
+
+/* ==========================================================================
+   6. Table and Search Form
+   ========================================================================== */
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.table-header h1 {
+    margin: 0;
+    color: var(--color-brand-pink);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: var(--color-brand-pink);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: var(--color-brand-pink-hover);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: var(--color-container);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.search-form label {
+    font-weight: 600;
+}
+
+.search-form input[type="date"] {
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background-color: #383838;
+    color: var(--color-text);
+    font-size: 1em;
+    height: 38px;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   7. Action Buttons (in table)
+   ========================================================================== */
+
+.action-button-table {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.search-button {
+    background-color: var(--color-accent-blue);
+}
+
+.clear-button {
+    background-color: #555;
+}
+
+.edit-button-table {
+    background-color: var(--color-accent-blue);
+}
+
+.delete-button-table {
+    background-color: var(--color-accent-red);
+}
+
+.action-button-table:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   8. Data Table
+   ========================================================================== */
+
+.table-wrapper {
+    background-color: var(--color-container);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-soft);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    color: var(--color-brand-pink);
+    border-bottom: 2px solid var(--color-border);
+}
+
+tbody td {
+    padding: 15px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    text-align: center;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #383838;
+}
+
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   9. Pagination
+   ========================================================================== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.pagination a,
+.pagination span {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: var(--color-brand-pink);
+    border: 1px solid var(--color-brand-pink);
+}
+
+.pagination a:hover {
+    background-color: var(--color-brand-pink);
+    color: #fff;
+}
+
+.pagination .current,
+.pagination .disabled {
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #555;
+    cursor: default;
+}

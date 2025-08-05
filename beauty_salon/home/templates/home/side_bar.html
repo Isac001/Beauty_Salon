@@ -1,0 +1,38 @@
+{% load static %}
+<div class="sidebar">
+    <div class="sidebar-header">
+        <img src="{% static 'beauty_salon_logo.png' %}" alt="Logo do Salão">
+    </div>
+    <ul class="sidebar-menu">
+        <li>
+            <a href="{% url 'home:home' %}" class="menu-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'client:client-list' %}" class="menu-item">
+                <i class="fas fa-users"></i>
+                <span>Clientes</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'salon_service:list-salon-service' %}" class="menu-item">
+                <i class="fas fa-cut"></i>
+                <span>Serviços</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'employee:employee-list' %}" class="menu-item">
+                <i class="fas fa-user-tie"></i>
+                <span>Funcionários</span>
+            </a>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+        <a href="#" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair</span>
+        </a>
+    </div>
+</div>
