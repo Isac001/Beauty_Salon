@@ -1,0 +1,242 @@
+[
+  {
+    "model": "salon_service.salonservice",
+    "pk": 1,
+    "fields": {
+      "name_of_service": "Corte de Cabelo Masculino",
+      "value_of_service": "45.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 2,
+    "fields": {
+      "name_of_service": "Corte de Cabelo Feminino",
+      "value_of_service": "75.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 3,
+    "fields": {
+      "name_of_service": "Escova",
+      "value_of_service": "50.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 4,
+    "fields": {
+      "name_of_service": "Hidratação Capilar",
+      "value_of_service": "80.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 5,
+    "fields": {
+      "name_of_service": "Manicure",
+      "value_of_service": "30.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 6,
+    "fields": {
+      "name_of_service": "Pedicure",
+      "value_of_service": "35.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 7,
+    "fields": {
+      "name_of_service": "Pintura de Cabelo",
+      "value_of_service": "150.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 8,
+    "fields": {
+      "name_of_service": "Luzes",
+      "value_of_service": "200.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 9,
+    "fields": {
+      "name_of_service": "Penteado",
+      "value_of_service": "120.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 10,
+    "fields": {
+      "name_of_service": "Maquiagem",
+      "value_of_service": "100.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 11,
+    "fields": {
+      "name_of_service": "Sobrancelha",
+      "value_of_service": "35.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 12,
+    "fields": {
+      "name_of_service": "Depilação",
+      "value_of_service": "60.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 13,
+    "fields": {
+      "name_of_service": "Alisamento Capilar",
+      "value_of_service": "250.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 14,
+    "fields": {
+      "name_of_service": "Tratamento de Queda de Cabelo",
+      "value_of_service": "90.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 15,
+    "fields": {
+      "name_of_service": "Massagem Relaxante",
+      "value_of_service": "120.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 16,
+    "fields": {
+      "name_of_service": "Limpeza de Pele",
+      "value_of_service": "110.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 17,
+    "fields": {
+      "name_of_service": "Design de Unhas",
+      "value_of_service": "40.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 18,
+    "fields": {
+      "name_of_service": "Unha em Gel",
+      "value_of_service": "80.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 19,
+    "fields": {
+      "name_of_service": "Progressiva",
+      "value_of_service": "280.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 20,
+    "fields": {
+      "name_of_service": "Botox Capilar",
+      "value_of_service": "180.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 21,
+    "fields": {
+      "name_of_service": "Plástica dos Fios",
+      "value_of_service": "220.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 22,
+    "fields": {
+      "name_of_service": "Cauterização",
+      "value_of_service": "130.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 23,
+    "fields": {
+      "name_of_service": "Reconstrução Capilar",
+      "value_of_service": "100.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 24,
+    "fields": {
+      "name_of_service": "Tinta Tonalizante",
+      "value_of_service": "140.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 25,
+    "fields": {
+      "name_of_service": "Mechas",
+      "value_of_service": "210.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 26,
+    "fields": {
+      "name_of_service": "Reflexologia Podal",
+      "value_of_service": "70.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 27,
+    "fields": {
+      "name_of_service": "Design de Barba",
+      "value_of_service": "30.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 28,
+    "fields": {
+      "name_of_service": "Corte Infantil",
+      "value_of_service": "40.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 29,
+    "fields": {
+      "name_of_service": "Micropigmentação de Sobrancelhas",
+      "value_of_service": "300.00"
+    }
+  },
+  {
+    "model": "salon_service.salonservice",
+    "pk": 30,
+    "fields": {
+      "name_of_service": "Extensão de Cílios",
+      "value_of_service": "180.00"
+    }
+  }
+]
